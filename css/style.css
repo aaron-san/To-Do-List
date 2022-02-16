@@ -1,0 +1,36 @@
+.title {
+    color: black;
+    display: inline;
+}
+
+body {
+    display: block;
+    align-items: left;
+    justify-content: left;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #000;
+    text-align: left;
+    margin: 3px 0px;
+}
+
+#welcome {
+    color: red;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    padding: 5px;
+}
+
+table {
+    display: block;
+    align: left;
+}
+
+#wrap {
+    width: 500px;
+    height: 500px;
+    margin: 20px;
+}

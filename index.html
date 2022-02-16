@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css " integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm " crossorigin="anonymous ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js " type="text/javascript "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js "></script>
+    <script src="https://cdnout.com/echarts/echarts.common.min.js"></script>
+
+
+    <!-- <script src="https://d3js.org/d3.v4.js "></script> -->
+
+
+    <title>title</title>
+
+
+</head>
+
+<body>
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 id="header-title">Item Lister</h1>
+                </div>
+                <div class="col-md-6 align-self-center">
+                    <input type="text" class="form-control" id="filter" placeholder="Search Items...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="card card-body">
+            <h2 class="title">Add Items</h2>
+            <form id="addForm" class="form-inline mb-3">
+                <input type="text" class="form-control mr-2" id="item">
+                <select name="" id="" class="form-control mr-2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <input type="submit" class="btn btn-dark" value="Submit">
+
+            </form>
+            <h2 class="title">Items</h2>
+
+            <ul id="items" class="list-group">
+                <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+            </ul>
+            <br>
+            <div class="align-self-center">
+                <button id="bt" class="btn btn-warning btn-sm">Click Here</button>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <div id="output "></div>
+                    <div id="di ">
+                        Holy smokes.
+                    </div>
+                    <div id="main" style="height:400px;"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="card " style="width: 500px;">
+                    <div class="card-header ">Header1</div>
+                    <div class="p-3 ">
+                        <h5 class="card-title mt-2 ">Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Subtitle</h6>
+                        <img class="card-img-top " src="img/beefield.png ">
+                        <br>
+                        <br>
+                        <canvas id='myChart' width="400 " height="200 "></canvas>
+                        <div class="card-body ">
+                            <p class="card-text ">Bees these years are migrating to colder regions for unkown reasons. It is speculated that the species of bees are slowly transforming into smaller and longer versions of the typical bee.</p>
+                            <a href="# " class="card-link ">link 1</a>
+                            <a href="# " class="card-link ">link 2</a>
+                            <hr>
+                            <a href="# " class="btn btn-primary ">Let's Go!</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="welcome ">Hi there.</div>
+                <button id="btn " class="btn btn-danger mb-2 " type="button " onclick="changeCont() "> Push </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script type="text/javascript ">
+        $.get('data.csv', function(data) {
+            var build = '<table border="1 " cellpadding="2 " cellspacing="0 " style="border-collapse: collapse " width="100% ">\n';
+            var rows = data.split("\n ");
+            rows.forEach(function getvalues(thisRow) {
+                build += "<tr>\n"; var columns = thisRow.split(","); for (var i = 0; i
+                < columns.length; i++) { build +="<td>" + columns[i] + "</td>\n"; } build +="</tr>\n" ; }) build +="</table>" ; $( '#wrap').append(build); }); </script> -->
+
+    <script>
+        var data1
+        fetch("data/data.json")
+            .then(response => response.json())
+            .then(data => data1 = data)
+            .then(() => console.log(data1[1]));
+
+        var data2
+        fetch("data/starwars.json")
+            .then(response => response.json())
+            .then(data => data2 = data)
+            .then(() => console.log(data2[1].species));
+    </script>
+
+
+
+    <script src="js/dom.js" defer></script>
+    <!-- defer async-->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
